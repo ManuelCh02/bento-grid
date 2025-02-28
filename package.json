@@ -1,0 +1,23 @@
+{
+  "name": "bento-grid",
+  "version": "1.0.0",
+  "description": "bento grid practice",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ManuelCh02/bento-grid.git"
+  },
+  "keywords": [
+    "css",
+    "html"
+  ],
+  "author": "ManuCh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ManuelCh02/bento-grid/issues"
+  },
+  "homepage": "https://github.com/ManuelCh02/bento-grid#readme"
+}
