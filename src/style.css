@@ -28,7 +28,7 @@ body {
 
     & main {
         height: 100%;
-        height: 100vh;
+        /* height: 100vh; */
         display: flex;
         align-items: center;
         justify-content: center;
@@ -55,10 +55,6 @@ body {
         width: 150px;
     }
 }
-
-/* grid-template-columns: repeat(4, 200px);
-    grid-template-rows: repeat(10, 60px);
-*/
 
 .bento-grid {
     & .item-1 {
@@ -157,18 +153,165 @@ body {
     }
 
     & .item-6 {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
         grid-area: 5 / 3 / span 3 / span 1;
         background: var(--yellow-500);
+        font-size: 1.5rem;
+        overflow: hidden;
+
+        & img {
+            width: 180px;
+        }
     }
 
     & .item-7 {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
         grid-area: 1 / 4 / span 7 / span 1;
         background: var(--purple-100);
+        font-size: 1.7rem;
+        overflow: hidden;
+
+        & img {
+            width: 320px;
+        }
+
+        & p:last-child {
+            font-size: 0.9rem;
+            letter-spacing: normal;
+            font-weight: var(--font-weight-text);
+            line-height: var(--line-height);
+        }
     }
 
     & .item-8 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         grid-area: 8 / 3 / span 3 / span 2;
         background: var(--purple-500);
+        color: var(--white);
+
+        & img {
+            width: 190px;
+        }
     }
 }
 
+@media only screen and (max-width: 1024px) {
+    :root {
+        font-size: 16px;
+    }
+
+    .bento-grid {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 800px;
+    }
+
+    .bento-grid {
+        & .item-1 {
+            grid-area: 1 / 1 / span 4 / span 1;
+        }
+
+        & .item-2 {
+            grid-area: 5 / 1 / span 4 / span 1;
+        }
+        
+        & .item-3 {
+            grid-area: 1 / 2 / span 4 / span 1;
+            font-size: 2.5rem;
+        }
+        
+        & .item-4 {
+            grid-area: 5 / 2 / span 3 / span 1;
+        }
+        
+        & .item-5 {
+            grid-area: 8 / 2 / span 3 / span 1;
+        }
+        
+        & .item-6 {
+            grid-area: 9 / 1 / span 3 / span 1;
+        }
+        
+        & .item-7 {
+            grid-area: 11 / 2 / span 4 / span 1;
+        }
+        
+        & .item-8 {
+            grid-area: 12 / 1 / span 3 / span 1;
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    :root {
+        font-size: 14px;
+    }
+    
+    .bento-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        max-width: 400px;
+    }
+    
+    .bento-grid__item {
+        padding: 1.5rem;
+    }
+    
+    .bento-grid {
+        & .item-1,
+        & .item-2,
+        & .item-3,
+        & .item-4,
+        & .item-5,
+        & .item-6,
+        & .item-7,
+        & .item-8 {
+            grid-column: 1 / -1;
+            grid-row: auto;
+        }
+        
+        & .item-3 {
+            font-size: 2rem;
+            padding: 2rem;
+        }
+        
+        & .item-7 {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+        
+        & .item-8 {
+            flex-direction: column;
+            text-align: center;
+            
+            & p {
+                margin-top: 1rem;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .bento-grid__item {
+        padding: 1rem;
+        font-size: 1.5rem;
+    }
+    
+    .bento-grid {
+        padding: 0.5rem;
+        & .item-3 {
+            font-size: 1.8rem;
+        }
+        
+        & .item-5 span:first-child {
+            font-size: 2.5rem;
+        }
+    }
+}
